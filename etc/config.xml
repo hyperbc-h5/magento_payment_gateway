@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../Store/etc/config.xsd">
+    <default>
+        <payment>
+            <hyperbc_paymentgateway>
+                <active>0</active>
+                <payment_action>true</payment_action>
+                <model>Hyperbc\PaymentGateway\Model\Payment\Hyperbcmethod</model>
+                <order_status>pending_payment</order_status><!-- set default order status-->
+                <environment>Sandbox</environment>
+                <app_id></app_id>
+                <public_key></public_key>
+                <private_key></private_key>
+                <callback_url></callback_url>
+                <title>Hyperbc</title>
+                <status_completed></status_completed>
+                <status_pending></status_pending>
+                <status_abnormal></status_abnormal>
+                <status_failed></status_failed>
+                <checkout_page_message>You will be redirected to the secure Hyperbc H5 checkout page.</checkout_page_message>
+            </hyperbc_paymentgateway>
+        </payment>
+    </default>
+</config>

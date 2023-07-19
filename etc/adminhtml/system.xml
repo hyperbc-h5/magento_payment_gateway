@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="hyperbc_paymentgateway"
+                   translate="label"
+                   sortOrder="100"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>Hyperbc Payment Gateway</label>
+                <field id="active"
+                       translate="label comment"
+                       sortOrder="1"
+                       type="select"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="environment"
+                       translate="label"
+                       type="select"
+                       sortOrder="2"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Environment</label>
+                    <source_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\EnvironmentAction</source_model>
+                    <tooltip>You can use Sandbox environment for testing</tooltip>
+                </field>
+                <field id="app_id"
+                       translate="label"
+                       type="text"
+                       sortOrder="3"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>App ID</label>
+                    <tooltip>You can get it from the Hyperbc service</tooltip>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="public_key"
+                       translate="label"
+                       type="textarea"
+                       sortOrder="3"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Hyperbc Public Key</label>
+                    <tooltip>Public key provider by Hyperbc for each merchant</tooltip>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="private_key"
+                       translate="label"
+                       type="textarea"
+                       sortOrder="3"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Merchant Private Key</label>
+                    <tooltip>Private key from merchant</tooltip>
+                    <validate>required-entry</validate>
+                </field>
+                <field id="callback_url"
+                       translate="label"
+                       type="text"
+                       sortOrder="4"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Callback url</label>
+                    <frontend_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\DisabledField</frontend_model>
+                    <comment>
+                        <model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\CallbackUrlComment</model>
+                    </comment>
+                </field>
+                <field id="title"
+                       translate="label"
+                       type="text"
+                       sortOrder="6"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Title</label>
+                    <tooltip>This controls the title which the user sees during checkout</tooltip>
+                </field>
+                <field id="status_completed"
+                       translate="label"
+                       type="select"
+                       sortOrder="9"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Order Status Completed</label>
+                    <source_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Order status after successful payment</tooltip>
+                </field>
+                <field id="status_pending"
+                       translate="label"
+                       type="select"
+                       sortOrder="10"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Pending Status</label>
+                    <source_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Order status after redirect to payment page</tooltip>
+                </field>
+                <field id="status_failed"
+                       translate="label"
+                       type="select"
+                       sortOrder="11"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Failed Status</label>
+                    <source_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Order status after unsuccessful payment</tooltip>
+                </field>
+                <field id="status_abnormal"
+                       translate="label"
+                       type="select"
+                       sortOrder="11"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
+                    <label>Abnormal Status</label>
+                    <source_model>Hyperbc\PaymentGateway\Model\Adminhtml\Source\StatusAction</source_model>
+                    <tooltip>Order status after receive incorrect amount</tooltip>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

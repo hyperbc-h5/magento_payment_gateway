@@ -1,0 +1,15 @@
+{
+    "name": "hyperbc/payment_gateway",
+    "description": "Hyperbc Enterprise Cryptocurrency Payment Processing for Magento",
+    "type": "magento2-module",
+    "version": "0.1.0",
+    "license": "OSL-3.0",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Hyperbc\\PaymentGateway\\": ""
+        }
+    }
+}
